@@ -42,7 +42,8 @@ The HTML snippets are as follows:
     <vue-datetime-picker ref:picker1 name="picker1"
                                       :model="datetime1" type="datetime"
                                       language="en-US"
-                                      datetime-format="YYYY-MM-DD HH:mm:ss">
+                                      datetime-format="YYYY-MM-DD HH:mm:ss"
+                                      date-update-fn="updateDate">
               </vue-datetime-picker>
     </div>
   
@@ -170,6 +171,9 @@ The optional event handler triggered when the value of the datetime picker
 was changed. If this parameter is presented and is not `null`, it must be a
 function which accept one argument: the new date time selected by the picker,
 which is a [moment](https://github.com/moment/moment/) object.
+## `dateUpdateFn`
+该属性用于父组件向子组件也就是datetime-picker传递一个方法，
+该方法定义在父组件中，用于子组件更新父组件的属性值
 
 # API
 
