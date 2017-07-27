@@ -7,6 +7,7 @@
 </template>
 <script>
   var DEFAULT_LANGUAGE = "en-US";
+<<<<<<< HEAD
   import vueI18N from 'vue-i18n'
   import $ from 'jquery'
   import moment from 'moment'
@@ -16,6 +17,8 @@
   require('eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css');
   require('../css/iconfont.css');
 
+=======
+>>>>>>> 449e95597c09954f6d1bdf3d8682b4b3142a92d0
   export default{
            replace: true,
           inherit: false,
@@ -57,10 +60,13 @@
               onChange: {
                   required: false,
                   default: null
+<<<<<<< HEAD
               },
               dateUpdateFn: {
               required: false,
               default: null
+=======
+>>>>>>> 449e95597c09954f6d1bdf3d8682b4b3142a92d0
               }
           },
           beforeCompile() {
@@ -82,6 +88,10 @@
           },
           mounted() {
                       this.ready();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 449e95597c09954f6d1bdf3d8682b4b3142a92d0
           },
           methods: {
               ready() {
@@ -148,9 +158,13 @@
                   $(this.$el).on("dp.change", function () {
                       if (! me.isChanging) {
                           me.isChanging = true;
+<<<<<<< HEAD
                           if (me.dateUpdateFn && me.dateUpdateFn.length>0) {
                           me.$emit(me.dateUpdateFn, me.control.date());
                           }
+=======
+                          me.$emit('updateDate',me.control.date());
+>>>>>>> 449e95597c09954f6d1bdf3d8682b4b3142a92d0
                           me.$nextTick(function () {
                               me.isChanging = false;
                               if (me.onChange) {
