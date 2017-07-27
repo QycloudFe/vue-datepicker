@@ -8,6 +8,7 @@
 <script>
   var DEFAULT_LANGUAGE = "en-US";
 <<<<<<< HEAD
+<<<<<<< HEAD
   import vueI18N from 'vue-i18n'
   import $ from 'jquery'
   import moment from 'moment'
@@ -19,6 +20,8 @@
 
 =======
 >>>>>>> 449e95597c09954f6d1bdf3d8682b4b3142a92d0
+=======
+>>>>>>> 3d941c467ac46b273f6b244b3ba8d8d88635dc12
   export default{
            replace: true,
           inherit: false,
@@ -61,12 +64,15 @@
                   required: false,
                   default: null
 <<<<<<< HEAD
+<<<<<<< HEAD
               },
               dateUpdateFn: {
               required: false,
               default: null
 =======
 >>>>>>> 449e95597c09954f6d1bdf3d8682b4b3142a92d0
+=======
+>>>>>>> 3d941c467ac46b273f6b244b3ba8d8d88635dc12
               }
           },
           beforeCompile() {
@@ -89,9 +95,13 @@
           mounted() {
                       this.ready();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 449e95597c09954f6d1bdf3d8682b4b3142a92d0
+=======
+
+>>>>>>> 3d941c467ac46b273f6b244b3ba8d8d88635dc12
           },
           methods: {
               ready() {
@@ -159,12 +169,16 @@
                       if (! me.isChanging) {
                           me.isChanging = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
                           if (me.dateUpdateFn && me.dateUpdateFn.length>0) {
                           me.$emit(me.dateUpdateFn, me.control.date());
                           }
 =======
                           me.$emit('updateDate',me.control.date());
 >>>>>>> 449e95597c09954f6d1bdf3d8682b4b3142a92d0
+=======
+                          me.$emit('updateDate',me.control.date());
+>>>>>>> 3d941c467ac46b273f6b244b3ba8d8d88635dc12
                           me.$nextTick(function () {
                               me.isChanging = false;
                               if (me.onChange) {
