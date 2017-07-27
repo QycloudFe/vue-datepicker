@@ -1,17 +1,13 @@
 # vue-datepicker
 
-[![Build Status](https://circleci.com/gh/Haixing-Hu/vue-datetime-picker/tree/master.svg?style=shield)](https://circleci.com/gh/Haixing-Hu/vue-datetime-picker/tree/master)
-[![Coverage Status](https://coveralls.io/repos/Haixing-Hu/vue-datetime-picker/badge.svg?branch=master&service=github)](https://coveralls.io/github/Haixing-Hu/vue-datetime-picker?branch=master)
-[![bitHound Score](https://www.bithound.io/github/Haixing-Hu/vue-datetime-picker/badges/score.svg)](https://www.bithound.io/github/Haixing-Hu/vue-datetime-picker)
-[![Dependency Status](https://david-dm.org/Haixing-Hu/vue-datetime-picker.svg)](https://david-dm.org/Haixing-Hu/vue-datetime-picker)
-[![devDependency Status](https://david-dm.org/Haixing-Hu/vue-datetime-picker/dev-status.svg)](https://david-dm.org/Haixing-Hu/vue-datetime-picker#info=devDependencies)
+
 
 A Vue.js component implementing the datetime picker control using the [Eonasdan's bootstrap datetime picker plugin](https://github.com/Eonasdan/bootstrap-datetimepicker).
 (修改自https://github.com/Haixing-Hu/vue-datetime-picker)
 # 改动如下：
--图标改为iconfont
--vue1.0改为vue2.0,体现在datetime-picker.vue文件和index.js文件
--去掉bootstrap.js，对bootstrap.css进行瘦身
+- 图标改为iconfont
+- vue1.0改为vue2.0,体现在datetime-picker.vue文件和index.js文件
+- 去掉bootstrap.js，对bootstrap.css进行瘦身
 
 
 
