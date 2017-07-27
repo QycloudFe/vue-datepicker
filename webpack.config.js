@@ -24,14 +24,6 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/
             },
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 449e95597c09954f6d1bdf3d8682b4b3142a92d0
-=======
->>>>>>> 3d941c467ac46b273f6b244b3ba8d8d88635dc12
             //解析.vue文件
             {
                 test: /\.vue$/,
