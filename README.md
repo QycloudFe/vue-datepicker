@@ -13,7 +13,7 @@ A Vue.js component implementing the datetime picker control using the [Eonasdan'
 
 
 
-![Screenshot](screenshot.png)
+
 
 # Requirements
 
