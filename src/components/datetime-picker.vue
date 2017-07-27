@@ -7,6 +7,15 @@
 </template>
 <script>
   var DEFAULT_LANGUAGE = "en-US";
+  import vueI18N from 'vue-i18n'
+  import $ from 'jquery'
+  import moment from 'moment'
+  import momentTimezone from  'moment-timezone/builds/moment-timezone-with-data'
+  import bDatetimePicker from 'eonasdan-bootstrap-datetimepicker'
+  require('../css/index.css');
+  require('eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css');
+  require('../css/iconfont.css');
+
   export default{
            replace: true,
           inherit: false,
@@ -48,6 +57,10 @@
               onChange: {
                   required: false,
                   default: null
+              },
+              dateUpdateFn: {
+              required: false,
+              default: null
               }
           },
           beforeCompile() {
@@ -69,7 +82,6 @@
           },
           mounted() {
                       this.ready();
-
           },
           methods: {
               ready() {
@@ -136,7 +148,9 @@
                   $(this.$el).on("dp.change", function () {
                       if (! me.isChanging) {
                           me.isChanging = true;
-                          me.$emit('updateDate',me.control.date());
+                          if (me.dateUpdateFn && me.dateUpdateFn.length>0) {
+                          me.$emit(me.dateUpdateFn, me.control.date());
+                          }
                           me.$nextTick(function () {
                               me.isChanging = false;
                               if (me.onChange) {

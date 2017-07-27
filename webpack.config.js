@@ -24,6 +24,8 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/
             },
+
+
             //解析.vue文件
             {
                 test: /\.vue$/,
