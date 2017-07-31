@@ -1,18 +1,11 @@
-# vue-datepicker
-
-
+# datepicker components for QYCloud base on [vue-datetime-picker](https://github.com/Haixing-Hu/vue-datetime-picker)
 
 A Vue.js component implementing the datetime picker control using the [Eonasdan's bootstrap datetime picker plugin](https://github.com/Eonasdan/bootstrap-datetimepicker).
-(修改自https://github.com/Haixing-Hu/vue-datetime-picker)
-# 改动如下：
+
+# 修改点：
 - 图标改为iconfont
 - vue1.0改为vue2.0,体现在datetime-picker.vue文件和index.js文件
 - 去掉bootstrap.js，对bootstrap.css进行瘦身
-
-
-
-
-
 
 
 # Requirements
@@ -35,6 +28,7 @@ The HTML snippets are as follows:
       A default datetime picker:
     </label>
     <div class="col-sm-5">
+
     <vue-datetime-picker ref:picker1 name="picker1"
                                       :model="datetime1" type="datetime"
                                       language="en-US"
@@ -44,9 +38,7 @@ The HTML snippets are as follows:
                                       :end-datetime="endDatetime">
               </vue-datetime-picker>
     </div>
-  
   </div>
-
 </div>
 ```
 
@@ -61,14 +53,14 @@ var vm = new Vue({
     "vue-datetime-picker": require("vue-datepicker")
   },
   data: {
-    result1: null,
+    datetime1: null,
     startDatetime: "2017-08-30",
     endDatetime: null
   },
   methods: {
     updateDate: function(datetime) {
-                       this.result1 = datetime;
-                   }
+      this.datetime1 = datetime;
+    }
   }
 });
 ```
@@ -76,8 +68,6 @@ var vm = new Vue({
 # Component Properties
 
 ## `model`
-
-
 
 The model bind to the control, which must be a two way binding variable.
 双向绑定变量，结果就是这个控件的值
@@ -236,8 +226,6 @@ localization file of the plugin does not provide the above localization messages
 the default English messages will be used.
 
 Some localization files could be found in the `src/i18n` directory.
-
-
 
 
 # License
