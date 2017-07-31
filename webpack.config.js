@@ -1,21 +1,25 @@
 /**
- * Created by anyuan on 17-7-24.
+
+ * @date: 2017-07-31
+
+ * @author: zhangyingwu<1316727932@qq.com>
+
  */
 var path = require('path');
 module.exports = {
-    entry: './src/main.js',
-    output: {
-        path:'./dist',
-        publicPath:'dist/',
-        filename: 'build.js'
+    entry:{
+        main: './src/main.js',
     },
-
+    output: {
+        path: './dist',
+        filename: '[name].js'
+    },
     devServer: {
-     historyApiFallback: true,
-     hot: false,
-     inline: true,
-     grogress: true
-     },
+        historyApiFallback: true,
+        hot: false,
+        inline: true,
+        grogress: true
+    },
     module: {
         loaders: [
             //转化ES6语法

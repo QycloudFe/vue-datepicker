@@ -1,27 +1,30 @@
 <template>
 <vue-datetime-picker ref:picker1 name="picker1"
                      :model="datetime1" type="datetime"
-                      language="en-US"
-                      datetime-format="YYYY-MM-DD HH:mm:ss"
-                      date-update-fn="updateDate">
+                     language="en-US"
+                     datetime-format="YYYY-MM-DD HH:mm:ss"
+                     date-update-fn="updateDate"
+                     :start-datetime="startDatetime"
+                     :end-datetime="endDatetime">
 </vue-datetime-picker>
 </template>
 <script>
-//var datetimePicker = require('../../index.js');
 
-import datetimePicker from './datetime-picker';
-   export default {
-            components: {
+var datetimePicker = require('../../index.js');
+
+//import datetimePicker from './datetime-picker';
+export default {
+        components: {
                 "vue-datetime-picker": datetimePicker
-            },
-            data() {
-                return {
-                    datetime1:new Date(),
-                    startDatetime: null,
-                    endDatetime: null
+              },
+        data() {
+                 return {
+                     datetime1:new Date(),
+                     startDatetime: "2017-08-30",
+                     endDatetime: null
                 };
             },
-            methods: {
+        methods: {
                 updateDate: function(datetime) {
                        this.datetime1 = datetime;
                 }

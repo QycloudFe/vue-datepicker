@@ -39,7 +39,9 @@ The HTML snippets are as follows:
                                       :model="datetime1" type="datetime"
                                       language="en-US"
                                       datetime-format="YYYY-MM-DD HH:mm:ss"
-                                      date-update-fn="updateDate">
+                                      date-update-fn="updateDate"
+                                      :start-datetime="startDatetime"
+                                      :end-datetime="endDatetime">
               </vue-datetime-picker>
     </div>
   
@@ -60,7 +62,7 @@ var vm = new Vue({
   },
   data: {
     result1: null,
-    startDatetime: null,
+    startDatetime: "2017-08-30",
     endDatetime: null
   },
   methods: {
@@ -93,6 +95,12 @@ object representing the date, without any timezone information.
 将设置为空，表示没有选择日期时间；另外，如果日期时间选择器控件的输入框中设置为空（
 即用户删除的日期选择器控件的输入框的文本），模型的值将被设置为null，而不是空字符串；
 如果用户选择一个日期，模型的值将被设置为矩表示日期，没有任何时区信息。
+
+## `startDatetime`
+设置日期选择的开始时间，没有可置为空，值为日期字符串或日期对象
+
+## `endDatetime`
+设置日期选择的结束时间，没有可置为空，值为日期字符串或日期对象
 
 ## `type`
 选择的日期类型

@@ -1,9 +1,10 @@
 <template>
   <div class="input-group date">
-  <input class="form-control" :name="name" type="text"  />
-   <span class="input-group-addon">
-   <i class="icon iconfont icon-rili"></i>
-     </span></div>
+    <input class="form-control" :name="name" type="text" />
+    <span class="input-group-addon">
+       <i class="icon iconfont icon-rili"></i>
+    </span>
+  </div>
 </template>
 <script>
   var DEFAULT_LANGUAGE = "en-US";
@@ -16,54 +17,61 @@
   require('eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css');
   require('../css/iconfont.css');
   export default{
-           replace: true,
+          replace: true,
           inherit: false,
           props: {
-              model: {
-                  required: true,
-                  twoWay: true
-              },
-              type: {
-                  type: String,
-                  required: false,
-                  default: "datetime"
-              },
-              language: {
-                  type: String,
-                  required: false,
-                  default: ""
-              },
-              datetimeFormat: {
-                  type: String,
-                  required: false,
-                  default: "YYYY-MM-DD HH:mm:ss"
-              },
-              dateFormat: {
-                  type: String,
-                  required: false,
-                  default: "YYYY-MM-DD"
-              },
-              timeFormat: {
-                  type: String,
-                  required: false,
-                  default: "HH:mm:ss"
-              },
-              name: {
-                  type: String,
-                  required: false,
-                  default: ""
-              },
-              onChange: {
-                  required: false,
-                  default: null
-              },
-              dateUpdateFn: {
-              required: false,
-              default: null
-              }
+                 model: {
+                   required: true,
+                   twoWay: true
+                   },
+                 startDatetime: {
+                   required: false,
+                   default: null
+                 },
+                 endDatetime: {
+                   required: false,
+                   default: null
+                 },
+                 type: {
+                   type: String,
+                   required: false,
+                   default: "datetime"
+                   },
+                 language: {
+                   type: String,
+                   required: false,
+                   default: ""
+                   },
+                 datetimeFormat: {
+                   type: String,
+                   required: false,
+                   default: "YYYY-MM-DD HH:mm:ss"
+                   },
+                 dateFormat: {
+                   type: String,
+                   required: false,
+                   default: "YYYY-MM-DD"
+                   },
+                 timeFormat: {
+                   type: String,
+                   required: false,
+                   default: "HH:mm:ss"
+                   },
+                 name: {
+                   type: String,
+                   required: false,
+                   default: ""
+                   },
+                 onChange: {
+                   required: false,
+                   default: null
+                   },
+                 dateUpdateFn: {
+                   required: false,
+                   default: null
+                   }
           },
           beforeCompile() {
-
               this.isChanging = false;
               this.control = null;
           },
@@ -139,12 +147,21 @@
 
                   $(this.$el).datetimepicker(options);
 
+
                   this.control = $(this.$el).data("DateTimePicker");
                   // set the date to the current value of the model
                   this.control.date(this.model);
+                  if (this.startDatetime !== null && new Date(this.startDatetime)) {
+                       this.control.minDate(this.startDatetime);
+                  }
+                  if (this.endDatetime !== null && new Date(this.endDatetime)) {
+                       this.control.maxDate(this.endDatetime);
+                  }
+
                   var me = this;
 
                   $(this.$el).on("dp.change", function () {
+
                       if (! me.isChanging) {
                           me.isChanging = true;
                          if (me.dateUpdateFn && me.dateUpdateFn.length>0) {
