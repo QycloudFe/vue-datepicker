@@ -14,7 +14,7 @@ A Vue.js component implementing the datetime picker control using the [Eonasdan'
 - [moment](https://github.com/moment/moment/) `^2.9.0`
 - [moment-timezone](https://github.com/moment/moment-timezone/) `^0.4.0`
 - [Eonasdan's bootstrap datetime picker](https://github.com/Eonasdan/bootstrap-datetimepicker) `^4.17.37`
-- [vue-i18n-plugin](https://github.com/Haixing-Hu/vue-i18n) `^0.2.2` This is optional.
+
 
 
 # Usage
@@ -182,50 +182,39 @@ of the picker to the specified value, where `picker` is the reference to the
 
 # Localization
 
-This component could use the [vue-i18n](https://github.com/Haixing-Hu/vue-i18n)
-plugin to localize the tooltips of the datetime picker control.
+本地语义化配置
 
-In order to localize this component, the localization files provided to the
-[vue-i18n](https://github.com/Haixing-Hu/vue-i18n) plugin must provide the
-following localization messages:
-
-```json
-{
-  "datetime_picker": {
-    "today": "Go to today",
-    "clear": "Clear selection",
-    "close": "Close the picker",
-    "selectMonth": "Select Month",
-    "prevMonth": "Previous Month",
-    "nextMonth": "Next Month",
-    "selectYear": "Select Year",
-    "prevYear": "Previous Year",
-    "nextYear": "Next Year",
-    "selectDecade": "Select Decade",
-    "prevDecade": "Previous Decade",
-    "nextDecade": "Next Decade",
-    "prevCentury": "Previous Century",
-    "nextCentury": "Next Century",
-    "pickHour": "Pick Hour",
-    "incrementHour": "Increment Hour",
-    "decrementHour": "Decrement Hour",
-    "pickMinute": "Pick Minute",
-    "incrementMinute": "Increment Minute",
-    "decrementMinute": "Decrement Minute",
-    "pickSecond": "Pick Second",
-    "incrementSecond": "Increment Second",
-    "decrementSecond": "Decrement Second",
-    "togglePeriod": "Toggle Period",
-    "selectTime": "Select Time"
-  }
-}
+```javascript
+module.exports = {
+    "datetime_picker": {
+        "today": "转至今日",
+        "clear": "清除选择",
+        "close": "关闭选择器",
+        "selectMonth": "选择月份",
+        "prevMonth": "上一个月",
+        "nextMonth": "下一个月",
+        "selectYear": "选择年份",
+        "prevYear": "上一年",
+        "nextYear": "下一年",
+        "selectDecade": "选择十年",
+        "prevDecade": "上一个十年",
+        "nextDecade": "下一个十年",
+        "prevCentury": "上一个世纪",
+        "nextCentury": "下一个世纪",
+        "pickHour": "选择小时",
+        "incrementHour": "增加小时",
+        "decrementHour": "减小小时",
+        "pickMinute": "选择分钟",
+        "incrementMinute": "增加分钟",
+        "decrementMinute": "减小分钟",
+        "pickSecond": "选择秒",
+        "incrementSecond": "增加秒",
+        "decrementSecond": "减小秒",
+        "togglePeriod": "切换时期",
+        "selectTime": "选择时间"
+    }
+};
 ```
-
-If no [vue-i18n](https://github.com/Haixing-Hu/vue-i18n) is used, or the
-localization file of the plugin does not provide the above localization messages,
-the default English messages will be used.
-
-Some localization files could be found in the `src/i18n` directory.
 
 
 # License

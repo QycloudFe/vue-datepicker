@@ -7,15 +7,17 @@
   </div>
 </template>
 <script>
-  var DEFAULT_LANGUAGE = "en-US";
-  import vueI18N from 'vue-i18n'
   import $ from 'jquery'
   import moment from 'moment'
-  import momentTimezone from  'moment-timezone/builds/moment-timezone-with-data'
+  import momentLocals from 'moment/locale/zh-cn'
+  import momentTimezone from 'moment-timezone/builds/moment-timezone-with-data'
   import bDatetimePicker from 'eonasdan-bootstrap-datetimepicker'
+  import DEFAULT_I18N from '../i18n/zh-CN'
   require('../css/index.css');
   require('eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css');
   require('../css/iconfont.css');
+
+  var DEFAULT_LANGUAGE = "zh-CN";
   export default{
           replace: true,
           inherit: false,
@@ -131,31 +133,20 @@
                           break;
                   }
 
-                  if (this.$i18n && this.$i18n.datetime_picker) {
-                      var messages = this.$i18n.datetime_picker;
-                      var tooltips = $.fn.datetimepicker.defaults.tooltips;
-                      for (var i = 0; i < DATETIME_PICKER_TOOLTIPS.length; ++i) {
-                          var name = DATETIME_PICKER_TOOLTIPS[i];
-                          if (messages[name]) {
-                              tooltips[name] = messages[name];    // localize
-                          }
-                      }
-                      options.tooltips = tooltips;
+                  if (DEFAULT_I18N && DEFAULT_I18N.datetime_picker) {
+                      options.tooltips = DEFAULT_I18N.datetime_picker;
                   }
                   // create the control
 
-
                   $(this.$el).datetimepicker(options);
-
-
                   this.control = $(this.$el).data("DateTimePicker");
                   // set the date to the current value of the model
                   this.control.date(this.model);
                   if (this.startDatetime !== null && new Date(this.startDatetime)) {
-                       this.control.minDate(this.startDatetime);
+                       this.control.minDate(new Date(this.startDatetime));
                   }
                   if (this.endDatetime !== null && new Date(this.endDatetime)) {
-                       this.control.maxDate(this.endDatetime);
+                       this.control.maxDate(new Date(this.endDatetime));
                   }
 
                   var me = this;
@@ -210,6 +201,4 @@
               }
           }
   }
-
-
 </script>

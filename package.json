@@ -10,8 +10,7 @@
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
-    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
-    "vue-i18n": "^7.0.5"
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",
