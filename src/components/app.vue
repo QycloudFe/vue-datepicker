@@ -1,12 +1,13 @@
 <template>
-<vue-datetime-picker ref:picker1 name="picker1"
-                     :model="datetime1" type="datetime"
-                     language="zh-CN"
-                     datetime-format="YYYY年MM月DD日"
-                     date-update-fn="update-date"
-                     :start-datetime="startDatetime"
-                     :end-datetime="endDatetime"
-                     @update-date="updateDate">
+<vue-datetime-picker ref:picker1 :name="name"
+                                 :model="datetime1"
+                                 :type="type"
+                                 :language="language"
+                                 :datetime-format="datetimeFormat"
+                                 date-update-fn="update-date"
+                                 :start-datetime="startDatetime"
+                                 :end-datetime="endDatetime"
+                                 @update-date="updateDate">
 </vue-datetime-picker>
 </template>
 <script>
@@ -22,7 +23,11 @@
                  return {
                      datetime1:new Date(),
                      startDatetime: "2017-08-30 05:23:23",
-                     endDatetime: null
+                     endDatetime: null,
+                     type: 'datetime',
+                     name: 'picker1',
+                     language: 'zh-CN',
+                     datetimeFormat: 'YYYY年MM月DD日'
                 };
             },
         methods: {
