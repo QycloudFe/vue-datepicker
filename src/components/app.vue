@@ -3,9 +3,10 @@
                      :model="datetime1" type="datetime"
                      language="zh-CN"
                      datetime-format="YYYY年MM月DD日"
-                     date-update-fn="updateDate"
+                     date-update-fn="update-date"
                      :start-datetime="startDatetime"
-                     :end-datetime="endDatetime">
+                     :end-datetime="endDatetime"
+                     @update-date="updateDate">
 </vue-datetime-picker>
 </template>
 <script>

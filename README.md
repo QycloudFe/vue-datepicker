@@ -29,13 +29,15 @@ The HTML snippets are as follows:
     </label>
     <div class="col-sm-5">
 
-    <vue-datetime-picker ref:picker1 name="picker1"
-                                      :model="datetime1" type="datetime"
-                                      language="en-US"
-                                      datetime-format="YYYY-MM-DD HH:mm:ss"
-                                      date-update-fn="updateDate"
+    <vue-datetime-picker ref:picker1  :name="name"
+                                      :model="datetime1" 
+                                      :type="type"
+                                      :language="language"
+                                      :datetime-format="datetimeFormat"
+                                      date-update-fn="update-date"
                                       :start-datetime="startDatetime"
-                                      :end-datetime="endDatetime">
+                                      :end-datetime="endDatetime"
+                                      @update-date="updateDate">
               </vue-datetime-picker>
     </div>
   </div>
@@ -55,7 +57,12 @@ var vm = new Vue({
   data: {
     datetime1: null,
     startDatetime: "2017-08-30",
-    endDatetime: null
+    endDatetime: null,
+    type: 'datetime',
+    name: 'picker1',
+    language: 'en-US',
+    datetimeFormat: 'YYYY-MM-DD HH:mm:ss'
+    
   },
   methods: {
     updateDate: function(datetime) {
